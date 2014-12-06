@@ -30,7 +30,7 @@
     </attributeValues>
     <attributeValues IterBinding="UserDetailsVO1Iterator" id="Username">
       <AttrNames>
-        <Item Value="Us"/>
+        <Item Value="Username"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="UserDetailsVO1Iterator" id="Userpassword">
@@ -38,5 +38,7 @@
         <Item Value="Userpassword"/>
       </AttrNames>
     </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="UserDetailsModuleDataControl"/>
   </bindings>
 </pageDefinition>

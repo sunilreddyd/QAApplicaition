@@ -49,4 +49,9 @@
       <value>/WEB-INF/root_menu.xml</value>
     </managed-property>
   </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>RegBean</managed-bean-name>
+    <managed-bean-class>com.qa.app.view.core.RegistrationBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>
