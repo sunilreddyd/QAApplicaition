@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="registration.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:pageTemplate viewId="/PageTemplates/UserTemplate.jspx" id="pt1">
+                    <f:facet name="Center">
+                        <af:panelBox text="Enter User Details" id="pb1">
+                            <f:facet name="toolbar"/>
+                            <af:panelFormLayout id="pfl1" rows="1" maxColumns="3">
+                                <af:panelFormLayout id="pfl2" inlineStyle="width:273px;">
+                                    <f:facet name="footer"/>
+                                    <af:inputText value="#{bindings.Firstname.inputValue}"
+                                                  label="#{bindings.Firstname.hints.label}"
+                                                  required="#{bindings.Firstname.hints.mandatory}"
+                                                  columns="#{bindings.Firstname.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Firstname.hints.precision}"
+                                                  shortDesc="#{bindings.Firstname.hints.tooltip}" id="it1">
+                                        <f:validator binding="#{bindings.Firstname.validator}"/>
+                                    </af:inputText>
+                                    <af:spacer width="10" height="10" id="s1"/>
+                                    <af:inputText value="#{bindings.Lastname.inputValue}"
+                                                  label="#{bindings.Lastname.hints.label}"
+                                                  required="#{bindings.Lastname.hints.mandatory}"
+                                                  columns="#{bindings.Lastname.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Lastname.hints.precision}"
+                                                  shortDesc="#{bindings.Lastname.hints.tooltip}" id="it2">
+                                        <f:validator binding="#{bindings.Lastname.validator}"/>
+                                    </af:inputText>
+                                    <af:spacer width="10" height="10" id="s2"/>
+                                    <af:inputText value="#{bindings.Email.inputValue}"
+                                                  label="#{bindings.Email.hints.label}"
+                                                  required="#{bindings.Email.hints.mandatory}"
+                                                  columns="#{bindings.Email.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Email.hints.precision}"
+                                                  shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
+                                        <f:validator binding="#{bindings.Email.validator}"/>
+                                    </af:inputText>
+                                    <af:spacer width="10" height="10" id="s5"/>
+                                    <af:inputText value="#{bindings.PhoneCell.inputValue}"
+                                                  label="#{bindings.PhoneCell.hints.label}"
+                                                  required="#{bindings.PhoneCell.hints.mandatory}"
+                                                  columns="#{bindings.PhoneCell.hints.displayWidth}"
+                                                  maximumLength="#{bindings.PhoneCell.hints.precision}"
+                                                  shortDesc="#{bindings.PhoneCell.hints.tooltip}" id="it4">
+                                        <f:validator binding="#{bindings.PhoneCell.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.PhoneCell.format}"/>
+                                    </af:inputText>
+                                </af:panelFormLayout>
+                                <af:spacer width="10" height="10" id="s7"/>
+                                <af:panelFormLayout id="pfl3">
+                                    <f:facet name="footer"/>
+                                    <af:spacer width="10" height="10" id="s3"/>
+                                    <af:inputText value="#{bindings.Username.inputValue}"
+                                                  label="#{bindings.Username.hints.label}"
+                                                  required="#{bindings.Username.hints.mandatory}"
+                                                  columns="#{bindings.Username.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Username.hints.precision}"
+                                                  shortDesc="#{bindings.Username.hints.tooltip}" id="it5">
+                                        <f:validator binding="#{bindings.Username.validator}"/>
+                                    </af:inputText>
+                                    <af:spacer width="10" height="10" id="s4"/>
+                                    <af:inputText value="#{bindings.Userpassword.inputValue}"
+                                                  label="#{bindings.Userpassword.hints.label}"
+                                                  required="#{bindings.Userpassword.hints.mandatory}"
+                                                  columns="#{bindings.Userpassword.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Userpassword.hints.precision}"
+                                                  shortDesc="#{bindings.Userpassword.hints.tooltip}" id="it6"
+                                                  secret="true">
+                                        <f:validator binding="#{bindings.Userpassword.validator}"/>
+                                    </af:inputText>
+                                    <af:spacer width="10" height="10" id="s6"/>
+                                    <af:inputText label="Confrim Password" id="it7" secret="true"
+                                                  value="#{UserDetails.confirmPassword}"
+                                                  valueChangeListener="#{UserDetails.onConfirmPassword}"
+                                                  autoSubmit="true"/>
+                                </af:panelFormLayout>
+                                <f:facet name="footer">
+                                    <af:button text="Submit" id="b1" action="#{UserDetails.onSubmit}"/>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:panelBox>
+                    </f:facet>
+                    
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

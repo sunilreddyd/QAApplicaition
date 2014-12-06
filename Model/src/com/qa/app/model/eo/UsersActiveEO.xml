@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UsersActiveEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="USERSACTIVE"
+  AliasName="UsersActiveEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Useractiveid"
+    IsNotNull="true"
+    ColumnName="USERACTIVEID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="USERSACTIVE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Userid"
+    ColumnName="USERID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="USERSACTIVE"/>
+  <Attribute
+    Name="Username"
+    Precision="255"
+    ColumnName="USERNAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USERSACTIVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Userpassword"
+    Precision="255"
+    ColumnName="USERPASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USERSACTIVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="UserDetailsEO"
+    Association="com.qa.app.model.eo.FkUseridAssoc"
+    AssociationEnd="com.qa.app.model.eo.FkUseridAssoc.UserDetailsEO"
+    AssociationOtherEnd="com.qa.app.model.eo.FkUseridAssoc.UsersActiveEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007554"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007554"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.qa.app.model.eo.UsersActiveEO.Useractiveid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkUserid">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007551"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_USERID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.qa.app.model.eo.UsersActiveEO.Userid"/>
+    </AttrArray>
+  </Key>
+</Entity>

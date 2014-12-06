@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="registrationPageDef"
+                Package="CommonPages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UserDetailsVO1" RangeSize="25" DataControl="UserDetailsModuleDataControl"
+              id="UserDetailsVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UserDetailsVO1Iterator" id="Firstname">
+      <AttrNames>
+        <Item Value="Firstname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserDetailsVO1Iterator" id="Lastname">
+      <AttrNames>
+        <Item Value="Lastname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserDetailsVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserDetailsVO1Iterator" id="PhoneCell">
+      <AttrNames>
+        <Item Value="PhoneCell"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserDetailsVO1Iterator" id="Username">
+      <AttrNames>
+        <Item Value="Us"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserDetailsVO1Iterator" id="Userpassword">
+      <AttrNames>
+        <Item Value="Userpassword"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

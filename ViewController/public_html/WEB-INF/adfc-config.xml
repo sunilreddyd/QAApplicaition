@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="registration">
+    <page>/CommonPages/registration.jspx</page>
+  </view>
+  <view id="Login.jspx">
+    <page>/Login.jspx</page>
+  </view>
+  <method-call id="Create">
+    <method>#{bindings.Create.execute}</method>
+    <outcome>
+      <fixed-outcome>Create</fixed-outcome>
+    </outcome>
+  </method-call>
+  <control-flow-rule id="__4">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__12">
+      <from-outcome>Login</from-outcome>
+      <to-activity-id>Login.jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__13">
+      <from-outcome>register</from-outcome>
+      <to-activity-id>Create</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__14">
+    <from-activity-id>Create</from-activity-id>
+    <control-flow-case id="__15">
+      <to-activity-id>registration</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>UserDetails</managed-bean-name>
+    <managed-bean-class>com.qa.app.view.userdetail.core.UserRegistration</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__7">
+    <description>Menu Model Managed Bean</description>
+    <managed-bean-name>root_menu</managed-bean-name>
+    <managed-bean-class>oracle.adf.view.rich.model.MDSMenuModel</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property id="__8">
+      <property-name>createHiddenNodes</property-name>
+      <value>false</value>
+    </managed-property>
+    <managed-property id="__9">
+      <property-name>source</property-name>
+      <property-class>java.lang.String</property-class>
+      <value>/WEB-INF/root_menu.xml</value>
+    </managed-property>
+  </managed-bean>
+</adfc-config>
