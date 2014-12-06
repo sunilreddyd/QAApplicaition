@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkUseridgrLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="com.qa.app.model.eo.FkUseridgrAssoc">
+  <ViewLinkDefEnd
+    Name="UserDetailsVO"
+    Cardinality="1"
+    Source="true"
+    Owner="com.qa.app.model.vo.UserDetailsVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="UserDetailsVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.qa.app.model.vo.UserDetailsVO.Userid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="UserGroupsVO"
+    Cardinality="-1"
+    Owner="com.qa.app.model.vo.UserGroupsVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="UserGroupsVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.qa.app.model.vo.UserGroupsVO.Userid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

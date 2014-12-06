@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.qa.app.view" ClientType="Generic">
+  <pageMap>
+    <page path="/CommonPages/registration.jspx" usageId="com_qa_app_view_registrationPageDef"/>
+    <page path="PageFlow#Create" usageId="com_qa_app_view_adfc_config___CreatePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_qa_app_view_registrationPageDef" path="CommonPages.registrationPageDef"/>
+    <page id="com_qa_app_view_adfc_config___CreatePageDef" path="com.qa.app.view.pageDefs.adfc_config___CreatePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="UserDetailsModuleDataControl" Package="com.qa.app.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="UserDetailsModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

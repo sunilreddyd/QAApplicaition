@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UserDetailsModule"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="UserDetailsVO1"
+    ViewObjectName="com.qa.app.model.vo.UserDetailsVO"/>
+  <ViewUsage
+    Name="UserGroupsVO1"
+    ViewObjectName="com.qa.app.model.vo.UserGroupsVO"/>
+  <ViewUsage
+    Name="UsersActiveVO1"
+    ViewObjectName="com.qa.app.model.vo.UsersActiveVO"/>
+  <ViewUsage
+    Name="UserGroupsVO2"
+    ViewObjectName="com.qa.app.model.vo.UserGroupsVO"/>
+  <ViewUsage
+    Name="UsersActiveVO2"
+    ViewObjectName="com.qa.app.model.vo.UsersActiveVO"/>
+  <ViewUsage
+    Name="GroupsList1"
+    ViewObjectName="com.qa.app.model.vo.GroupsList"/>
+  <ViewLinkUsage
+    Name="FkUseridgrLink1"
+    ViewLinkObjectName="com.qa.app.model.vo.FkUseridgrLink"
+    SrcViewUsageName="com.qa.app.model.am.UserDetailsModule.UserDetailsVO1"
+    DstViewUsageName="com.qa.app.model.am.UserDetailsModule.UserGroupsVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUseridLink1"
+    ViewLinkObjectName="com.qa.app.model.vo.FkUseridLink"
+    SrcViewUsageName="com.qa.app.model.am.UserDetailsModule.UserDetailsVO1"
+    DstViewUsageName="com.qa.app.model.am.UserDetailsModule.UsersActiveVO2"
+    Reversed="false"/>
+</AppModule>

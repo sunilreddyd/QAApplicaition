@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="adfc_config___CreatePageDef"
+                Package="com.qa.app.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="UserDetailsVO1" RangeSize="25" DataControl="UserDetailsModuleDataControl"
+              id="UserDetailsVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="UserDetailsVO1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+  </bindings>
+</pageDefinition>
